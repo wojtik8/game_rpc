@@ -10,6 +10,6 @@ package api;
  *
  * @author wojtek
  */
-class IPlayer {
-    
+public interface IPlayer {
+    int logout();
 }

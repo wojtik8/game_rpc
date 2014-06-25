@@ -12,6 +12,29 @@ package api;
  */
 public interface IGame {
     //public IGame connectToServer(String addr, int port);
+
+    /**
+     *
+     * @param name
+     * @param password
+     * @return
+     */
     public IPlayer login(String name, String password);
+
+    /**
+     *
+     * @param name
+     * @param password
+     * @return
+     */
+    public int register(String name, String password);
+
+    /**
+     *
+     */
+    public void ping();
+    /**
+     *
+     */
     public void disconnectFromServer();
 }

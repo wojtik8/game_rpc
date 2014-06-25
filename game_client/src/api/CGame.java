@@ -25,6 +25,7 @@ import rpc.Game;
 public class CGame implements IGame{
     private Game.Client client;
     static TTransport transport;
+    static TProtocol protocol;
     
     public static IGame connectToServer(String addr, int port) {
         transport = new TSocket(addr, port);
@@ -33,7 +34,7 @@ public class CGame implements IGame{
         } catch (TTransportException ex) {
             Logger.getLogger(CGame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        TProtocol protocol = new  TBinaryProtocol(transport);
+        protocol = new  TBinaryProtocol(transport);
         System.out.println("connected to server: " +addr + ":" + port);
         CGame instance = new CGame();
         instance.client = new Game.Client(new TMultiplexedProtocol(protocol, "Game"));
@@ -46,6 +47,7 @@ public class CGame implements IGame{
         int clientid;
         try {
             clientid = client.login(name, password);
+            return new CPlayer(clientid);
         } catch (TException ex) {
             Logger.getLogger(CGame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -57,6 +59,25 @@ public class CGame implements IGame{
     public void disconnectFromServer() {
         System.out.println("disconnecting from server");
         transport.close();
+    }
+
+    @Override
+    public int register(String name, String password) {
+        try {
+            client.registerCredentials(name, password);
+        } catch (TException ex) {
+            Logger.getLogger(CGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+
+    @Override
+    public void ping() {
+        try {
+            client.ping();
+        } catch (TException ex) {
+            Logger.getLogger(CGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

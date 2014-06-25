@@ -6,7 +6,7 @@ IDL_DIR=.
 CLIENT_GEN_DIR=../game_client/src
 SERVER_GEN_DIR=../game_server/node
 NODEJS_GEN=./gen-nodejs
-JAVA_GEN=./gen-java/rpc
+JAVA_GEN=./gen-java
 
 report_failure()
 {

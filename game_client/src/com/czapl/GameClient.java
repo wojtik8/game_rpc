@@ -2,6 +2,7 @@ package com.czapl;
 
 import api.CGame;
 import api.IGame;
+import api.IPlayer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -25,11 +26,13 @@ public class GameClient {
         
         
       IGame game = CGame.connectToServer("localhost", 8200);
-
-      game.login("dupa", "dupka");
+      //game.register("wojtik8", "dupka2");
+      IPlayer player = game.login("wojtik8", "dupka2");
+      player.logout();
+      game.ping();
       game.disconnectFromServer();
-//      TMultiplexedProtocol mpPlayer = new TMultiplexedProtocol(protocol, "Player");
-//      Player.Client playerClient = new Player.Client(mpPlayer);
+      System.in.read();
+//      
 //      int retval;
 //      
 //      System.out.println("retval login: "+retval);

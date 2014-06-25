@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/wojtek/workspace/java-gson-rpc-example/src/com/brentscode/GsonRpc.java</file>
-            <file>file:/home/wojtek/workspace/java-gson-rpc-example/src/game/RemoteException.java</file>
-            <file>file:/home/wojtek/workspace/java-gson-rpc-example/src/game/Game.java</file>
-            <file>file:/home/wojtek/workspace/java-gson-rpc-example/src/api/IGame.java</file>
-            <file>file:/home/wojtek/workspace/java-gson-rpc-example/src/api/IPlayer.java</file>
+            <file>file:/home/wojtek/workspace/game_rpc/game_client/src/api/IGame.java</file>
+            <file>file:/home/wojtek/workspace/game_rpc/game_client/src/api/CPlayer.java</file>
+            <file>file:/home/wojtek/workspace/game_rpc/game_client/src/com/czapl/GameClient.java</file>
+            <file>file:/home/wojtek/workspace/game_rpc/game_client/src/api/IPlayer.java</file>
+            <file>file:/home/wojtek/workspace/game_rpc/game_client/src/rpc/Game.java</file>
+            <file>file:/home/wojtek/workspace/game_rpc/game_client/src/api/CGame.java</file>
         </group>
     </open-files>
 </project-private>
